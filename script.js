@@ -7,7 +7,7 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
-const deleteAll = document.querySelector('.delete-all'); /// challenge
+// const deleteAll = document.querySelector('.delete-all'); /// challenge
 
 // let map, mapEvent; // keeping to not break application
 
@@ -93,7 +93,7 @@ class App {
 
     containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
 
-    deleteAll.addEventListener('click', this.reset.bind(this));
+    // deleteAll.addEventListener('click', this.reset.bind(this));
   }
 
   _getPosition() {
@@ -281,6 +281,8 @@ class App {
   }
 
   _moveToPopup(e) {
+    if (!this.#map) return;
+
     const workoutEl = e.target.closest('.workout');
     // console.log(workoutEl);
 
